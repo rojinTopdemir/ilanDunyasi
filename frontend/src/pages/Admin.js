@@ -9,10 +9,11 @@ function Admin({ kullanici }) {
 
     const headers = { admin_id: kullanici?.id };
 
-    useEffect(() => {
-        if (!kullanici) return;
-        verileriGetir();
-    }, [kullanici]);
+   useEffect(() => {
+  if (!kullanici) return;
+  verileriGetir();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [kullanici]);
 
     const verileriGetir = () => {
         axios.get('https://ilandunyasi.onrender.com/api/admin/stats', { headers })
